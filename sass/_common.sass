@@ -1,0 +1,254 @@
+// # SHORT HOWTO
+// ## Sprites
+//     .whatever
+//          +sized-sprite($icons, coderiver) //or
+// 			+s(codedby) //gets default value for spritemap as $icons
+// ### animation example
+//     +include keyframes(rotate)
+//        from
+//           +rotate(0)
+//        to
+//           +rotate(360)
+// ## animation usage
+//     body:hover
+// 	    +animation(rotate 200s linear infinite)
+// ## animations easing, see easings.net for full list and examples, tnx @ai
+//     transition: all 1.2s ceaser($ease-in)
+// ## gradient example
+//     +background-image(linear-gradient(#232323, #5c5c5c));
+//     +g(#232323, #5c5c5c);
+//	   horizontal
+//     +gh(#232323, #5c5c5c);
+// ## making bw-images
+//     img
+//			@extend %gray
+// ## predefined media-queries: https://github.com/paranoida/sass-mediaqueries
+//     +min-screen(320)
+//			display: none
+// +max-screen(1000), +iphone5, +iphone4, +ipad-retina, +ipad, +hdpi - also available
+//
+// ## use cycles
+//     @for $i from 1 through 3
+//       .item-#{$i}
+//			width: 2em * $i;
+//     @each $s in a,b,c
+// 	    	#{$s}
+//				display: none
+// ## fonts 
+// Save fonts to /css/fonts, after that write (eot, woff, ttf):
+// +font(book, cytiapro-black-webfont)  
+// =book
+// 	font-family: "book", Arial, sans-serif 
+// insert pics into css
+// div
+// 	+pic("blabla.png")
+// span
+// 	+png(blabla)
+// p
+// 	+jpg(bla)
+
+
+body
+	font-family: Arial, sans-serif 
+	font-size: 12px 
+	line-height: 1.4
+
+.out
+	min-width: 320px 
+
+// fonts
+
++font("BookAntiqua", book_antiqua_regular)
++font("BookAntiqua Bold", book_antiqua_bold)
+
+=ba
+	font-family: "BookAntiqua", Arial, sans-serif
+=bab
+	font-family: "BookAntiqua", Arial, sans-serif
+
+=ff
+	font-family: 'Open Sans', sans-serif
+	font-style: normal
+=light
+	+ff
+	font-weight: 300
+=litalic
+	+ff
+	font-weight: 300
+	font-style: italic
+=reg
+	+ff
+	font-weight: 400
+=semi
+	+ff
+	font-weight: 600
+=bold
+	+ff
+	font-weight: 700
+=exbold
+	+ff
+	font-weight: 800
+	
+
+//reset
+h1, h2, h3, h4, h5 ,h6
+	font-weight: normal
+a
+	text-decoration: none
+	
+//mod
+.input
+	background-color: #FFF
+	+border-radius(5px)
+	+light
+	color: #6587AF
+	font-size: 14px
+	width: 100%
+	padding: 11px 13px 
+	+box 
+.d-input
+	+light
+	color: #555 
+	font-size: 12px
+	background-color: #FFF
+	border: 1px solid #44709C
+	+border-radius(3px)
+	width: 100%
+	padding: 6px 10px 5px
+	+box 
+	+placeholder-color(#555)
+.btn
+	font-size: 13px
+	text-transform: uppercase
+	color: #FFF
+	+reg
+	background-color: #2D4164
+	+border-radius(5px)
+	padding: 10px 50px
+	position: relative
+	&:active
+		top: 1px
+	&_normal
+		padding: 12px 10px 10px
+
+//select
+.select
+	position: relative
+	cursor: pointer
+	font-size: 12px
+	color: #555
+	+light
+	+user-select(none)
+	text-align: left
+	&.is-center
+		text-align: center
+	select
+		opacity: 0
+		position: absolute
+		top: 0
+		left: 0
+		z-index: 1
+	&.is-active
+		.select__text
+			+border-radius(3px 3px 0 0)
+	&__text
+		position: relative
+		display: block
+		white-space: nowrap
+		overflow: hidden
+		text-overflow: ellipsis
+		padding: 0 33px 0 10px
+		+box 
+		height: 27px
+		line-height: 27px
+		border: 1px solid #44709C
+		z-index: 2 
+		background: #fff 
+		+border-radius(3px)
+		&:after, &:before
+			content: ""
+			position: absolute
+		&:before
+			top: 0
+			right: 0
+			bottom: 0
+			width: 23px
+			background-color: #44709C
+		&:after
+			right: 7px
+			top: 10px
+			+arr(9, 5, #fff, b)
+	&__list
+		position: absolute
+		display: none
+		left: 0
+		right: 0
+		top: 100%
+		z-index: 200
+		max-height: 300px
+		overflow: auto 
+		background: #fff 
+		border: 1px solid #44709C
+		+border-radius(0 0 3px 3px)
+		border-top: none
+		li
+			padding: 4px 33px 4px 10px
+			cursor: pointer
+			line-height: 1
+			&:hover
+				color: #fff
+				background: #44709C 
+.d-select
+	position: relative
+	cursor: pointer
+	font-size: 10px
+	color: #555
+	+light 
+	+user-select(none)
+	text-align: left
+	select
+		opacity: 0
+		position: absolute
+		top: 0
+		left: 0
+		z-index: 1
+	&.is-active
+		.d-select__text			
+			+border-radius(2px 2px 0 0)
+	&__text
+		position: relative
+		display: block
+		white-space: nowrap
+		overflow: hidden
+		text-overflow: ellipsis
+		padding: 0 18px 0 10px
+		+box 
+		height: 19px
+		line-height: 19px
+		z-index: 2 
+		background: #fff 
+		+border-radius(2px)
+		&:after
+			content: ""
+			position: absolute
+			right: 5px
+			top: 7px
+			+arr(6, 3, #185d87, b)
+	&__list
+		position: absolute
+		display: none
+		left: 0
+		right: 0
+		top: 100%
+		z-index: 200
+		max-height: 300px
+		overflow: auto 
+		background: #fff 
+		+border-radius(0 0 2px 2px)
+		li
+			padding: 3px 10px 
+			cursor: pointer
+			line-height: 1
+			&:hover
+				color: #fff
+				background: #44709C 
