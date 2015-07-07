@@ -178,6 +178,9 @@ body
 			&.is-news
 				+s(news-blue)
 				margin: 0 13px 0 9px 
+			&.is-ads
+				+s(ads)
+				margin: 0 10px 0 0 
 		span
 			font-size: 17px
 			color: #185D87
@@ -379,3 +382,240 @@ body
 		font-size: 12px
 		line-height: 1.75
 		color: #555
+
+.search
+	position: relative
+	padding: 0 27px 0 0
+	width: 148px
+	+box
+	.d-input
+		+border-radius(3px 0 0 3px)
+	&__btn
+		width: 27px
+		height: 27px
+		position: absolute
+		top: 0
+		right: 0
+		+border-radius(0 3px 3px 0)
+		background: url(../img/icons/search.png) no-repeat center center #185D87
+		
+.catalog
+	&__inner
+		padding: 22px 56px 0
+	.content__title
+		margin: 0 0 15px -9px 
+	&__top
+		+clr
+		margin: 0 0 15px 
+		.btn
+			float: left
+		.search
+			float: right
+	&__items
+		padding: 0 35px 
+
+.c-item
+	+clr
+	padding: 16px 1px 9px
+	border-bottom: 1px solid #185D87 
+	&:hover
+		background: rgba(111, 191, 221, 0.25) 
+	&__img
+		float: left
+		width: 128px
+		height: 72px
+		margin: 0 15px 0 0 
+		background-color: #185D87
+	&__text
+		float: left
+		width: 408px
+		+clr
+	&__title
+		color: #185D87
+		+bold
+		font-size: 13px
+		line-height: 1
+		margin-bottom: 7px
+		a
+			color: #185D87
+			&:hover
+				text-decoration: underline
+	hr
+		border: none
+		height: 1px
+		width: 100%
+		background-color: #185D87
+		margin: 0 0 7px
+	p
+		color: #555
+		font-size: 11px
+		+semi
+		height: 35px
+		overflow: hidden
+	.c-info
+		float: left
+		padding: 8px 0 0 
+	.c-btn
+		float: right
+
+.c-info
+	font-size: 0
+	li
+		display: inline-block
+		vertical-align: top
+		padding: 0 9px 0 0 
+		a
+			display: inline-block
+			color: #555
+			+reg
+			font-size: 10px
+			position: relative
+			line-height: 14px
+			&:before
+				position: absolute
+				top: 0
+				left: 0
+				content: "" 
+			&.is-comment
+				padding-left: 18px 
+				&:before
+					+s(bubble)
+			&.is-preview
+				padding-left: 21px 
+				&:before
+					+s(preview)
+					top: 1px
+			&.is-date
+				padding-left: 16px 
+				&:before
+					+s(calendar)
+
+.pages
+	font-size: 0
+	padding: 30px 0 32px
+	text-align: center 
+	&__text
+		font-size: 12px
+		color: #4C8299
+		+semi
+		display: inline-block
+		vertical-align: middle
+		margin: 0 12px
+		line-height: 1
+		padding: 5px 0 4px 
+	&__list
+		display: inline-block
+		vertical-align: middle
+		+g(#fff, #dedede)
+		border: 1px solid #C8C8C8
+		border-left: none
+		+border-radius(5px)
+		overflow: hidden
+		margin: 0 12px
+		li
+			display: inline-block
+			vertical-align: top
+		a			
+			border-left: 1px solid #C8C8C8
+			line-height: 1
+			padding: 5px 0 4px 
+			min-height: 21px 
+			width: 23px
+			+box
+			text-align: center
+			display: inline-block
+			font-size: 12px
+			+semi
+			color: #4C8299
+			text-transform: uppercase
+			position: relative
+			&:hover, &.is-active
+				background-color: #326292
+				color: #fff 
+			&.is-prev, &.is-next
+				&:before
+					content: ""
+					position: absolute
+					top: 6px
+			&.is-prev
+				&:before
+					left: 9px
+					+s(prev)
+				&:hover
+					&:before
+						+s(prev-white)
+			&.is-next
+				&:before
+					right: 9px
+					+s(next)
+				&:hover
+					&:before
+						+s(next-white)
+
+.s-filter
+	+clr
+	&__link
+		font-size: 15px
+		font-weight: 700
+		font-family: "Myriad Pro"
+		color: #FAFAFF
+		display: inline-block
+		vertical-align: top
+		padding: 4px 26px 3px 0
+		position: relative
+		line-height: 1
+		&:before
+			position: absolute
+			top: 50%
+			right: 0
+			content: "" 
+			+s(arr-bot)
+			margin: -11px 0 0
+		&.is-date
+			float: left
+		&.is-price
+			float: right
+	&__check
+		padding: 20px 0 0 
+		clear: both
+		font-size: 0
+		.checkbox
+			display: inline-block
+			vertical-align: middle
+	&__label
+		font-size: 15px
+		font-family: "Myriad Pro"
+		color: #FAFAFF
+		font-weight: normal
+		display: inline-block
+		vertical-align: middle
+		margin-right: 15px
+			
+.ads
+	padding: 24px 32px 24px 35px 
+	.content__title
+		margin: 0 0 16px 19px 
+	&__top
+		font-size: 0
+		+clr
+		.select
+			margin: 0 8px 0 0
+	.select
+		width: 123px
+		display: inline-block
+		vertical-align: top
+	&__link
+		display: inline-block
+		vertical-align: top
+		font-size: 12px
+		+semi
+		text-decoration: underline
+		color: #185D87
+		line-height: 1
+		padding: 8px 0 7px 
+		margin: 0 5px 
+		&:hover
+			text-decoration: none
+	.search
+		float: right
+		width: 168px
