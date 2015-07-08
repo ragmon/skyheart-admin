@@ -107,20 +107,17 @@ body
 	+border-radius(4px)
 	+clr
 	min-height: 580px 
-	&.is-index
-		display: table
-		.sidebar, .content
-			display: table-cell
-			float: none
-			vertical-align: top
 	&.is-news
-		display: table
-		.sidebar, .content
-			display: table-cell
-			float: none
-			vertical-align: top
 		.info-new__table
 			margin-bottom: 34px
+	&.is-support
+		min-height: 710px
+		.sidebar, .content
+			min-height: 710px
+	&.is-delivery
+		.sidebar, .content
+			min-height: 740px
+
 .sidebar, .content
 	position: relative
 	float: left
@@ -153,7 +150,7 @@ body
 		margin-bottom: 35px
 		display: block
 	&__inner
-		padding: 40px 37px 40px 43px 
+		padding: 40px 37px 100px 43px 
 .content
 	+border-radius(0 4px 4px 0)
 	background-color: #FAFAFF
@@ -181,6 +178,15 @@ body
 			&.is-ads
 				+s(ads)
 				margin: 0 10px 0 0 
+			&.is-delivery
+				+s(delivery)
+				margin: 0 8px 0 0
+			&.is-rating
+				+s(rating-blue)
+				margin: 0 8px 0 0
+			&.is-plane
+				+s(plane)
+				margin: 0 12px 0 0
 		span
 			font-size: 17px
 			color: #185D87
@@ -197,6 +203,14 @@ body
 		margin: 0 15px 0 0 
 		&.is-aero
 			+s(aero)
+		&.is-lamp
+			+s(lamp)
+		&.is-aero2
+			+s(aero2)
+		&.is-case
+			+s(case)
+		&.is-rating
+			+s(rating)
 		span
 			position: absolute
 			top: 1px
@@ -598,6 +612,7 @@ body
 	&__top
 		font-size: 0
 		+clr
+		margin: 0 0 13px 
 		.select
 			margin: 0 8px 0 0
 	.select
@@ -619,3 +634,503 @@ body
 	.search
 		float: right
 		width: 168px
+	&__block
+		+clr
+	&__sections
+		float: left
+	&__right
+		float: right
+		text-align: right
+		.btn
+			width: 125px
+			text-align: center
+			margin: 0 0 11px 
+	&__items
+		padding: 5px 0 0
+		position: relative
+	&__popup
+		position: absolute
+		top: 0
+		right: 0
+		background-color: #185D87
+		width: 400px
+		+box-shadow(0 2px 4px rgba(24, 93, 135, 0.75))
+		padding: 12px
+		+box 
+		z-index: 10
+		display: none
+		margin: 12px 0 0 
+		&.is-active
+			display: block
+		.a-input, .a-textarea
+			margin-bottom: 12px
+	&__popup-btn
+		text-align: right
+//section
+.section
+	font-size: 12px
+	+light
+	line-height: 1
+	margin: 0 0 22px 
+	span
+		display: block
+		overflow: hidden
+		-ms-text-overflow: ellipsis
+		text-overflow: ellipsis
+		white-space: nowrap
+	&__title
+		position: relative
+		padding: 7px 28px 6px
+		width: 170px
+		+box
+		background-color: #185D87
+		+box-shadow(0 2px 4px rgba(24, 93, 135, 0.75))
+		color: #fff 
+		i
+			position: absolute
+			cursor: pointer
+			&.is-plus
+				width: 9px
+				height: 9px
+				top: 8px
+				left: 8px
+				&:before, &:after
+					position: absolute
+					content: "" 
+					background: #fff 
+				&:before
+					top: 0
+					bottom: 0
+					left: 4px
+					width: 1px
+				&:after
+					top: 4px
+					left: 0
+					right: 0
+					height: 1px
+			&.is-edit
+				+s(edit)
+				top: 5px
+				right: 5px
+	&__body
+		width: 213px
+		background: #fff
+		+box-shadow(0 2px 4px rgba(24, 93, 135, 0.75)) 
+		position: relative
+	&__category
+		position: relative
+		color: #555
+		padding: 7px 62px 6px 28px 
+		&:hover
+			color: #185D87
+			i
+				&.is-edit
+					+s(edit-blue)
+				&.is-delete
+					+s(delete-blue)
+		i
+			position: absolute
+			cursor: pointer
+			&.is-edit
+				+s(edit-dark)
+				top: 5px
+				right: 38px
+			&.is-delete
+				+s(delete-dark)
+				top: 5px
+				right: 11px
+		span
+			display: block
+			overflow: hidden
+			-ms-text-overflow: ellipsis
+			text-overflow: ellipsis
+			white-space: nowrap
+
+//submenu
+.submenu
+	width: 166px
+	background-color: #FFF
+	+box-shadow(0 2px 4px rgba(24, 93, 135, 0.75))
+	&__top
+		position: relative
+		padding: 6px 35px 7px 8px 
+		i
+			position: absolute
+			cursor: pointer
+			&.is-close
+				top: 13px
+				right: 11px
+				+s(close-blue)
+	&__body
+		text-align: right
+		padding: 0 0 7px 
+	&__title
+		font-size: 12px
+		+light
+		color: #fff
+		padding: 8px 11px 7px  
+		line-height: 1
+		display: block
+		background-color: #185D87
+		text-align: left
+	.c-btn
+		margin: 7px 8px 0 
+		
+//a-item
+.a-item
+	border-bottom: 1px solid #185d87
+	padding: 19px 9px 7px 1px 
+	+clr
+	&:hover
+		background-color: #D7EBF6
+	&__img
+		width: 70px
+		height: 70px
+		background-color: #185D87
+		margin: 0 25px 0 0
+		float: left
+	&__block
+		width: 485px
+		float: left
+	&__price
+		float: right
+		font-size: 11px
+		color: #555
+		+reg
+		line-height: 1
+		padding: 2px 0 
+	&__title
+		font-size: 13px
+		display: block
+		overflow: hidden
+		+bold
+		color: #185D87
+		line-height: 1
+		a
+			color: #185D87
+	&__trade
+		float: right
+		color: #555
+		font-size: 11px
+		line-height: 1
+		+reg
+	p
+		overflow: hidden
+		color: #555
+		font-size: 11px
+		line-height: 1
+	&__top
+		padding: 0 18px 0 0 
+	&__text
+		padding: 12px 0 9px 
+	&__info
+		font-size: 0
+		.trade, span, .c-btn
+			display: inline-block
+			vertical-align: middle
+		span
+			font-size: 11px
+			color: #555
+			+semi
+			line-height: 1
+			margin: 0 12px 0 0 
+			overflow: hidden
+			-ms-text-overflow: ellipsis
+			text-overflow: ellipsis
+			white-space: nowrap
+			&.is-name
+				width: 75px
+			&.is-place
+				width: 82px
+			&.is-date
+				width: 95px
+		.trade
+			margin: 0 8px 0 0 
+		.c-btn
+			width: 118px
+			padding: 3px 5px 3px
+			
+.delivery
+	padding: 24px 26px 0 35px 
+	.content__title
+		padding: 0 19px
+		margin: 0 0 17px 
+	&__form
+		font-size: 0
+		margin: 0 0 15px 
+		.search
+			float: right
+			width: 168px
+		p
+			font-size: 13px
+			color: #185D87
+			+semi
+			line-height: 1
+			padding: 7px 0 
+		.select
+			margin: 0 9px 0 0
+			display: inline-block
+			vertical-align: top 
+			&.is-medium
+				width: 99px
+			&.is-small
+				width: 79px
+			&.is-big
+				width: 146px
+	&__field
+		width: 137px
+		display: inline-block
+		vertical-align: top
+		position: relative
+		padding: 0 25px 0 0
+		+box
+	&__input
+		+light
+		color: #555 
+		font-size: 12px
+		background-color: #F4F4F4
+		border: 1px solid #44709C
+		+border-radius(3px 0 0 3px)
+		width: 100%
+		padding: 6px 10px 5px
+		+box 
+		+placeholder-color(#555)
+	&__btn
+		position: absolute
+		top: 0
+		bottom: 0
+		right: 0
+		width: 26px
+		background: url(../img/icons/mail.png) no-repeat center center #185d87
+		+border-radius(0 3px 3px 0)
+	&__top
+		margin-bottom: 14px
+	&__items
+		padding: 0 6px 0 0 
+		
+.d-item
+	font-size: 0
+	padding: 19px 15px 6px 13px
+	border-bottom: 1px solid #185d87
+	+clr 
+	background-color: #D7EBF6
+	&_mod
+		background: none
+	&__img
+		width: 70px
+		height: 70px
+		background-color: #185D87
+		margin: 0 25px 0 0 
+		float: left
+	span, li
+		display: inline-block
+		vertical-align: top
+		font-size: 14px
+		color: #555
+		+reg
+		line-height: 1
+	&__delivery
+		float: right
+	&__info
+		width: 467px
+		float: left
+		ul
+			overflow: hidden
+			li
+				margin: 0 23px 0 0 
+	.c-btn
+		padding: 6px 0 5px 
+		width: 100px
+		margin: 0 0 0 7px 
+	&__top
+		margin: 0 0 13px
+	&__text
+		margin: 0 0 13px 
+	&__btns
+		text-align: right
+		+clr
+		span
+			float: left
+			
+//send
+.send
+	float: right
+	width: 657px
+	padding: 24px 0 0 
+	&__inner
+		padding: 19px 23px 14px
+		+box-shadow(0 3px 4px rgba(24, 93, 135, 0.75)) 
+		background-color: #FFF
+	.s-input
+		margin-bottom: 13px
+		max-width: 570px
+	.s-text
+		margin-bottom: 9px
+	&__bottom
+		+clr
+		position: relative
+		.btn
+			float: right
+			padding: 8px 13px 7px
+			+border-radius(4px)
+	&__smile
+		+s(smile)
+		float: left
+		margin: 6px 0 0
+	&__smiles
+		display: none
+		position: absolute
+		bottom: 100%
+		left: 0
+		font-size: 0
+		background: #fff
+		padding: 10px
+		border: 1px solid #2D4164
+		max-width: 210px
+		+box-shadow(0 3px 6px rgba(20, 45, 96, 0.75))
+		text-align: left
+		&.is-active
+			display: block
+		&:before, &:after
+			position: absolute
+			top: 100%
+			content: ""
+		&:before
+			left: 10px
+			+arr(10, 8, #2D4164, b)
+		&:after
+			left: 11px
+			+arr(8, 7, #fff, b)
+		a
+			display: inline-block
+			vertical-align: middle
+			width: 24px
+			margin: 3px
+			img
+				width: 100%
+				
+.support
+	padding: 20px 26px 20px 53px 
+	.content__title
+		margin-bottom: 15px
+	&__top
+		background-color: #185D87
+		padding: 9px 10px 10px 11px 
+		+clr
+		font-size: 0
+		.checkbox
+			display: inline-block
+			vertical-align: middle
+			margin: 1px 13px 0 0
+		.sub-select
+			display: inline-block
+			vertical-align: middle
+		.subscription
+			display: inline-block
+			vertical-align: middle
+			margin-left: 15px
+	&__left
+		float: left
+	&__right
+		float: right
+	&__label
+		font-size: 14px
+		color: #FAFAFF
+		+semi
+		line-height: 1
+		display: inline-block
+		vertical-align: middle 
+	&__form
+		border: 1px solid #185D87
+		min-height: 425px 
+	&__body
+		padding: 10px
+	&__field
+		padding: 12px 10px 12px 10px
+		background-color: #185D87
+		position: relative
+		&.is-check
+			padding-left: 46px
+			.checkbox
+				position: absolute
+				bottom: 19px
+				left: 13px
+	&__price
+		float: right
+		padding: 0 10px 
+	&__price, &__info li
+		font-size: 14px
+		color: #FAFAFF
+		+reg
+		line-height: 1
+	&__info
+		overflow: hidden
+		font-size: 0
+		padding: 0 10px 
+		li
+			display: inline-block
+			vertical-align: top
+			margin: 0 11px 0 0 
+	&__rating
+		float: right
+		width: 52px
+		margin-left: 9px
+	&__textarea
+		overflow: hidden
+	&__field-top
+		margin-bottom: 13px
+	&__block
+		.sup-textarea
+			height: 32px
+	&__actions
+		font-size: 0
+		margin: 0 -10px 0 0 
+		padding: 10px 0 4px 
+		li
+			display: inline-block
+			vertical-align: top
+			color: #FAFAFF
+			font-size: 12px
+			line-height: 1
+			+light
+			margin: 0 12px 0 0 
+			padding: 6px 0 0 
+			b
+				+bold
+				margin: 0 0 0 6px 
+	&__area
+		padding: 26px 0 13px
+	&__btn
+		text-align: right
+		.btn
+			width: 125px
+	&__theme
+		font-size: 14px
+		color: #555
+		+reg
+		line-height: 1
+		padding: 0 0 10px  
+	&__checkbox
+		font-size: 0
+		padding: 10px 11px
+		border: 1px solid #185D87
+		.checkbox
+			float: left
+			margin-right: 15px
+		small, time
+			color: #555
+			font-size: 14px
+			line-height: 1
+			+reg
+			padding: 2px 0 
+		time
+			float: right
+			margin-left: 15px
+		small
+			display: block
+			overflow: hidden
+			-ms-text-overflow: ellipsis
+			text-overflow: ellipsis
+			white-space: nowrap
+	&__checks
+		padding: 2px 0 

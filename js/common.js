@@ -54,4 +54,39 @@ head.ready(function() {
 		return false;
 
 	});
+
+	$('.js-report-link').on('click', function() {
+		$('.js-report').addClass('is-active');
+		$('.js-report').css('top', $(this).offset().top - $('.js-report-block').offset().top + $(this).outerHeight());
+		if ($('body').height() - $(this).offset().top < 500) {
+			$('.js-report').css('top', $(this).offset().top - $('.js-report-block').offset().top - $('.js-report').outerHeight() - $('.a-item').height());
+		};
+		return false;
+	});
+	$('.js-report').each(function() {
+		$('body').on('click', function() {
+			$('.js-report').removeClass('is-active');
+		});
+		$(this).on('click', function(event) {
+			event.stopPropagation();
+		});
+	});
+
+	//smiles
+	$('.js-smile-btn').on('click', function() {
+		$('.js-smile').toggleClass('is-active');
+		return false;
+	});
+	$('.js-smile').each(function() {
+		$('body').on('click', function() {
+			$('.js-smile').removeClass('is-active');
+		});
+		$(this).on('click', function(event) {
+			event.stopPropagation();
+		});
+		$('.js-smile a').on('click', function() {
+			$('.js-smile').removeClass('is-active');
+			return false;
+		});
+	});
 });
