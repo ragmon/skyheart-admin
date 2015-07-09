@@ -122,66 +122,76 @@
 						<div class="ads__block">
 							<div class="ads__sections">
 								<div class="section">
-									<div class="section__title">
+									<div class="section__title js-cat">
 										<i class="is-plus"></i>
-										<span>Название раздела</span>
-										<i class="is-edit"></i>
+										<span>Название раздела</span>										
+										<input type="text" placeholder="Название раздела">
+										<i class="is-edit js-cat-edit"></i>
 									</div>
 									<div class="section__body">
-										<div class="section__category">
+										<div class="section__category js-cat">
 											<span>Название категории</span>
-											<i class="is-edit"></i>
-											<i class="is-delete"></i>
+											<input type="text" placeholder="Название категории">
+											<i class="is-edit js-cat-edit"></i>
+											<i class="is-delete js-confirm-btn"></i>
 										</div>
-										<div class="section__category">
+										<div class="section__category js-cat">
 											<span>Название категории</span>
-											<i class="is-edit"></i>
-											<i class="is-delete"></i>
+											<input type="text" placeholder="Название категории">
+											<i class="is-edit js-cat-edit"></i>
+											<i class="is-delete js-confirm-btn"></i>
 										</div>
-										<div class="section__category">
+										<div class="section__category js-cat">
 											<span>Название категории</span>
-											<i class="is-edit"></i>
-											<i class="is-delete"></i>
+											<input type="text" placeholder="Название категории">
+											<i class="is-edit js-cat-edit"></i>
+											<i class="is-delete js-confirm-btn"></i>
 										</div>
-										<div class="section__category">
+										<div class="section__category js-cat">
 											<span>Название категории</span>
-											<i class="is-edit"></i>
-											<i class="is-delete"></i>
+											<input type="text" placeholder="Название категории">
+											<i class="is-edit js-cat-edit"></i>
+											<i class="is-delete js-confirm-btn"></i>
 										</div>
 									</div>
 								</div>
 								<div class="section">
-									<div class="section__title">
+									<div class="section__title js-cat">
 										<i class="is-plus"></i>
-										<span>Название раздела</span>
-										<i class="is-edit"></i>
+										<span>Название раздела</span>										
+										<input type="text" placeholder="Название раздела">
+										<i class="is-edit js-cat-edit"></i>
 									</div>
 									<div class="section__body">
-										<div class="section__category">
+										<div class="section__category js-cat">
 											<span>Название категории</span>
-											<i class="is-edit"></i>
-											<i class="is-delete"></i>
+											<input type="text" placeholder="Название категории">
+											<i class="is-edit js-cat-edit"></i>
+											<i class="is-delete js-confirm-btn"></i>
 										</div>
-										<div class="section__category">
+										<div class="section__category js-cat">
 											<span>Название категории</span>
-											<i class="is-edit"></i>
-											<i class="is-delete"></i>
+											<input type="text" placeholder="Название категории">
+											<i class="is-edit js-cat-edit"></i>
+											<i class="is-delete js-confirm-btn"></i>
 										</div>
-										<div class="section__category">
+										<div class="section__category js-cat">
 											<span>Название категории</span>
-											<i class="is-edit"></i>
-											<i class="is-delete"></i>
+											<input type="text" placeholder="Название категории">
+											<i class="is-edit js-cat-edit"></i>
+											<i class="is-delete js-confirm-btn"></i>
 										</div>
-										<div class="section__category">
+										<div class="section__category js-cat">
 											<span>Название категории</span>
-											<i class="is-edit"></i>
-											<i class="is-delete"></i>
+											<input type="text" placeholder="Название категории">
+											<i class="is-edit js-cat-edit"></i>
+											<i class="is-delete js-confirm-btn"></i>
 										</div>
 									</div>
 								</div>
 							</div>
-							<div class="ads__right">
-								<button class="btn btn_normal">Добавить</button>
+							<div class="ads__right js-cat">
+								<button class="btn btn_normal js-cat-edit">Добавить</button>
 								<div class="submenu">
 									<div class="submenu__top">
 										<div class="select js-select">
@@ -197,16 +207,24 @@
 												<option value="Раздел">Раздел</option>
 											</select>
 										</div>
-										<i class="is-close"></i>
+										<i class="is-close js-cat-close"></i>
 									</div>
 									<div class="submenu__body">
-										<a href="#" class="submenu__title">Название</a>	
+										<!-- <a href="#" class="submenu__title">Название</a>	 -->
+										<input type="text" placeholder="Название" class="submenu__title">
 										<button class="c-btn">Ок</button>
 									</div>
 								</div>
 							</div>
 						</div>
 					</form>
+				</div>
+			</div>
+			<div class="section-confirm js-confirm">
+				<p>Подтвердить удаление</p>
+				<div class="section-confirm__btns">
+					<button class="btn btn_normal js-confirm-close">Ок</button>
+					<button class="btn btn_normal js-confirm-close">Отмена</button>
 				</div>
 			</div>
 		</section>
