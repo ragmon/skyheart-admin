@@ -985,7 +985,27 @@ body
 		padding: 0 6px 0 0 
 		min-height: 520px 
 		position: relative
-		
+	&__popups
+		.news__form
+			// display: none
+			margin: 12px 0 0 
+			position: absolute
+			top: 0
+			right: 0
+			left: 0
+			z-index: 200
+			background: #fff
+			border: 1px solid #185d87  
+			padding: 12px 
+			visibility: hidden
+			+opacity(0)
+			&.is-active
+				visibility: visible
+				+opacity(1)
+			.select, .news__input
+				width: 90%
+			.news__top, .area
+				margin-bottom: 12px
 .d-item
 	font-size: 0
 	padding: 19px 15px 6px 13px
@@ -1236,3 +1256,10 @@ body
 	.btn
 		margin: 0 10px 
 		padding: 10px 15px 8px
+		
+.p-close
+	position: absolute
+	top: 12px
+	right: 12px
+	+s(close-blue)
+	cursor: pointer
