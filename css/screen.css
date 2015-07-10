@@ -394,8 +394,11 @@ body:before { position: absolute; top: 0; left: 0; right: 0; bottom: 0; backgrou
 .a-item__info-text { overflow: hidden; padding: 12px 0 11px; text-align: justify; font-size: 0.1px; margin: 0 -5px; }
 .a-item__info-text:after { display: inline-block; width: 100%; content: ""; }
 .a-item__info-text span { display: inline-block; vertical-align: middle; font-size: 11px; color: #555555; font-family: "Open Sans", sans-serif; font-style: normal; font-weight: 600; line-height: 1; overflow: hidden; -ms-text-overflow: ellipsis; text-overflow: ellipsis; white-space: nowrap; max-width: 33%; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; padding: 0 5px; }
-.a-item__info .c-btn { width: 118px; padding: 3px 5px 3px; float: right; }
-.a-item__info .c-btn span { width: 100%; display: block; }
+.a-item__info .c-btn { width: 118px; padding: 0; float: right; line-height: 1; overflow: hidden; }
+.a-item__info .c-btn:active { top: 0; }
+.a-item__info .c-btn span { display: block; padding: 4px 5px 2px; }
+.a-item__info .c-btn span:hover { background: #3d5887; }
+.a-item__info .c-btn span:active { background: #1d2a41; }
 
 .delivery { padding: 24px 26px 0 35px; }
 .delivery .content__title { padding: 0 19px; margin: 0 0 17px; }
